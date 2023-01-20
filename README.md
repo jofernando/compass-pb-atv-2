@@ -105,6 +105,7 @@ Abra o console do Amazon EC2 em https://console.aws.amazon.com/ec2/.
   - Em `Sub-rede` selecione uma das sub-redes criadas.
   - Em `Firewall (grupos de segurança)` escolha `Selecionar um grupo de segurança existente` e escolha o grupo de segurança criado anteriormente.
 7. Em `Configurar armazenamento` crie um disco GP2 de 16GB.
+8. Clique em `Detalhes avançados` e no campo `Dados do usuário` copie e cole o conteúdo do arquivo [user_data.sh](https://github.com/jofernando/compass-pb-atv-2/blob/main/scripts/user-data.sh)
 
 Mantenha as seleções padrão para outras configurações de sua instância.
 
