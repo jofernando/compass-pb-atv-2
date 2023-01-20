@@ -5,6 +5,7 @@ Jose Fernando Mendes da Costa
 ## Sumário
 
 1. [Criação da sua VPC](https://github.com/jofernando/compass-pb-atv-2/#criação-da-sua-vpc)
+2. [Criação do seu grupo de segurança](https://github.com/jofernando/compass-pb-atv-2/#criação-do-seu-grupo-de-segurança)
 
 ### Criação da sua VPC
 
@@ -48,3 +49,27 @@ Como criar sua VPC usando o Console de gerenciamento da AWS
 </dl>
 
 5. Visualize como ficou sua VPC e se tudo estiver certo clique em `Criar VPC`.
+
+### Criação do seu grupo de segurança
+
+Como criar seu grupo de segurança usando o Console de gerenciamento da AWS  
+1. Faça login no AWS Management Console e abra o console do Amazon EC2 em https://console.aws.amazon.com/ec2/.
+2. No painel de navegação, selecione Grupos de segurança.
+3. Escolha `Criar grupo de segurança`.
+4. Em Detalhes básicos, insira um nome descritivo e uma breve descrição para o grupo de segurança.
+5. Em `VPC` Selecione a VPC criada anteriormente.
+6. Nas regras de entrada, adicine as seguintes regras:  
+
+
+| Name | ID da regra do grupo de segurança | Versão do IP | Tipo | Protocolo | Intervalo de portas | Origem | Descrição          |
+|------|-----------------------------------|--------------|------|-----------|---------------------|--------|--------------------|
+| | | IPv4         | UDP personalizado | UDP       | 2049                | 0.0.0.0/0      | Porta necessaria para utilizar o NFS |
+| | | IPv4         | UDP personalizado | UDP       | 111                 | 0.0.0.0/0      | Porta necessaria para utilizar o NFS |
+| | | IPv4         | TCP personalizado | TCP       | 111                 | 0.0.0.0/0      | Porta necessaria para utilizar o NFS |
+| | | IPv4         | HTTP              | TCP       | 80                  | 0.0.0.0/0      | Permite conexao com protocolo HTTP   |
+| | | IPv4         | HTTPS             | TCP       | 443                 | 0.0.0.0/0      | Permite conexao com protocolo HTTPS  |
+| | | IPv4         | SSH               | TCP       | 22                  | **SEU IP**     | Permite conexao SSH para o seu IP    |
+| | | IPv4         | NFS               | TCP       | 2049                | 0.0.0.0/0      | Porta necessaria para utilizar o NFS |
+
+
+Clique em `Criar grupo de segurança`.
