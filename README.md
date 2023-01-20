@@ -8,6 +8,7 @@ Jose Fernando Mendes da Costa
 2. [Criação do seu grupo de segurança](https://github.com/jofernando/compass-pb-atv-2/#criação-do-seu-grupo-de-segurança)
 3. [Criação do seu par de chaves](https://github.com/jofernando/compass-pb-atv-2/#criação-do-seu-par-de-chaves)
 4. [Criação da sua instância](https://github.com/jofernando/compass-pb-atv-2/#criação-da-sua-instância)
+5. [Criação do seu ip elástico](https://github.com/jofernando/compass-pb-atv-2/#criação-do-seu-ip-elástico)
 
 ### Criação da sua VPC
 
@@ -112,3 +113,22 @@ Revise um resumo da configuração da instância no painel `Resumo` e, quando vo
 Uma página de confirmação informa que sua instância está sendo executada. 
 
 Pode levar alguns minutos até que a instância esteja pronta para sua conexão. Verifique se a instância foi aprovada nas verificações de status da coluna Status Checks (Verificações de status).
+
+### Criação do seu ip elástico
+
+Abra o console do Amazon EC2 em https://console.aws.amazon.com/ec2/.
+1. No painel de navegação, escolha `Rede e segurança` e `IPs elásticos`.
+2. Escolha `Alocar endereço IP elástico`.
+3. Adicione as seguintes tags:
+
+    Project: PB
+
+    CostCenter: PBCompass.
+
+4. Escolha `Alocar`.
+5. No painel de navegação, escolha `Rede e segurança` e `IPs elásticos`.
+6. Selecione o IP elástico criado, clique em `Ações` e `Associar endereço IP elástico`.
+7. Em `Tipo de recurso` selecione instância.
+8. Em `Instância` selecione a instância criada anteriormente.
+9. Em `Endereço IP privado` selecione o endereço IP atríbuido a instância.
+10. Clique em `Associar`
