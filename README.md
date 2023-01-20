@@ -6,6 +6,8 @@ Jose Fernando Mendes da Costa
 
 1. [Criação da sua VPC](https://github.com/jofernando/compass-pb-atv-2/#criação-da-sua-vpc)
 2. [Criação do seu grupo de segurança](https://github.com/jofernando/compass-pb-atv-2/#criação-do-seu-grupo-de-segurança)
+3. [Criação do seu par de chaves](https://github.com/jofernando/compass-pb-atv-2/#criação-do-seu-par-de-chaves)
+4. [Criação da sua instância](https://github.com/jofernando/compass-pb-atv-2/#criação-da-sua-instância)
 
 ### Criação da sua VPC
 
@@ -73,3 +75,40 @@ Como criar seu grupo de segurança usando o Console de gerenciamento da AWS
 
 
 Clique em `Criar grupo de segurança`.
+
+### Criação do seu par de chaves
+
+Faça login no AWS Management Console e abra o console do Amazon EC2 em https://console.aws.amazon.com/ec2/.
+
+    No campo nome insira um nome descritivo.
+    Nas opções de Tipo de par de chaves e Formato de arquivo de chave privada pode deixar as opções padrão.
+    Clique em Criar par de chaves e salve o arquivo gerado.
+
+### Criação da sua instância
+
+Abra o console do Amazon EC2 em https://console.aws.amazon.com/ec2/.
+1. No painel do console do EC2, clique em `Executar instância`.
+2. Em `Nome e etiquetas`, em Name (Nome), insira um nome descritivo para a instância e adicione as seguintes tags para a instância e volume:
+
+   Project: PB
+
+   CostCenter: PBCompass.
+3. Em `Imagens de aplicação e de sistema operacional`, faça o seguinte:
+
+    Escolha Início rápido e depois Amazon Linux. Este é o sistema operacional (SO) de sua instância.
+
+4. Em `Tipo de instância`, escolha o tipo de instância t3.small.
+5. Em `Par de chaves (login)`, escolha o par de chaves criado anteriormente.
+6. Ao lado `Configurações de rede`, escolha `Editar`.
+  - Em `VPC` selecione a VPC criada anteriormente.
+  - Em `Sub-rede` selecione uma das sub-redes criadas.
+  - Em `Firewall (grupos de segurança)` escolha `Selecionar um grupo de segurança existente` e escolha o grupo de segurança criado anteriormente.
+7. Em `Configurar armazenamento` crie um disco GP2 de 16GB.
+
+Mantenha as seleções padrão para outras configurações de sua instância.
+
+Revise um resumo da configuração da instância no painel `Resumo` e, quando você estiver pronto, escolha `Executar instância`.
+
+Uma página de confirmação informa que sua instância está sendo executada. 
+
+Pode levar alguns minutos até que a instância esteja pronta para sua conexão. Verifique se a instância foi aprovada nas verificações de status da coluna Status Checks (Verificações de status).
