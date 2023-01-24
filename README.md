@@ -4,12 +4,20 @@ Jose Fernando Mendes da Costa
 
 ## Sumário
 
+1. [Criando um gateway da internet](https://github.com/jofernando/compass-pb-atv-2/#criando-um-gateway-da-internet)
 1. [Alterando sua VPC](https://github.com/jofernando/compass-pb-atv-2/#alterando-sua-vpc)
 2. [Alterando seu grupo de segurança](https://github.com/jofernando/compass-pb-atv-2/#alterando-seu-grupo-de-segurança)
 3. [Criação do seu par de chaves](https://github.com/jofernando/compass-pb-atv-2/#criação-do-seu-par-de-chaves)
 4. [Criação da sua instância](https://github.com/jofernando/compass-pb-atv-2/#criação-da-sua-instância)
 5. [Criação do seu ip elástico](https://github.com/jofernando/compass-pb-atv-2/#criação-do-seu-ip-elástico)
 
+### Criando um gateway da internet
+Como criar um gateway da internet usando o Console de gerenciamento da AWS
+1. Abra o console da Amazon VPC em https://console.aws.amazon.com/vpc/ (realize o login se não estiver logado).
+2. No painel de navegação, clique em `Gateways da internet`.
+3. Clique em `Criar gateway da internet`.
+4. No campo nome informe um nome descritivo.
+5. Clique em `Criar gateway da internet`.
 ### Alterando sua VPC
 
 Como alterar sua VPC usando o Console de gerenciamento da AWS
@@ -46,11 +54,10 @@ Como alterar seu grupo de segurança usando o Console de gerenciamento da AWS
 
 ### Criação do seu par de chaves
 
-Faça login no AWS Management Console e abra o console do Amazon EC2 em https://console.aws.amazon.com/ec2/.
-
-    No campo nome insira um nome descritivo.
-    Nas opções de Tipo de par de chaves e Formato de arquivo de chave privada pode deixar as opções padrão.
-    Clique em Criar par de chaves e salve o arquivo gerado.
+1. Faça login no AWS Management Console e abra o console do Amazon EC2 em https://console.aws.amazon.com/ec2/.
+2. No campo nome insira um nome descritivo.
+3. Nas opções de Tipo de par de chaves e Formato de arquivo de chave privada pode deixar as opções padrão.
+4. Clique em Criar par de chaves e salve o arquivo gerado.
 
 ### Criação da sua instância
 
