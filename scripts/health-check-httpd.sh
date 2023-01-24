@@ -1,7 +1,7 @@
 #!/bin/bash
 DATE=$(date '+%d/%m/%Y %H:%M:%S %Z')
-LOG_ONLINE=/root/httpd-online.log
-LOG_OFFLINE=/root/httpd-offline.log
+LOG_ONLINE=/nfs/jose_fernando/httpd-online.log
+LOG_OFFLINE=/nfs/jose_fernando/httpd-offline.log
 touch -a ${LOG_ONLINE} ${LOG_OFFLINE}
 STATUS=$(systemctl status httpd | grep Active | awk '{print $2}')
 MENSAGEM_BASE="${DATE} - httpd ${STATUS}"
