@@ -5,3 +5,5 @@ systemctl enable --now httpd
 cd /root/
 git clone https://github.com/jofernando/compass-pb-atv-2.git
 /bin/cp -b compass-pb-atv-2/etc/crontab /etc/crontab
+mkdir /nfs
+cat compass-pb-atv-2/etc/fstab >> /etc/fstab
